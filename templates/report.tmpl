@@ -1,0 +1,11 @@
+Report from {{ start_date }} to {{ end_date }}
+
+{% for project, data in actions.items() %}
+    {{ projects[project] }}
+    {% for action, results in data.items() %}
+        {{ action }}
+        {% for result in results -%}
+            {{ result }}
+        {% endfor -%}
+    {% endfor %}
+{% endfor %}
